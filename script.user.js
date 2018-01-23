@@ -25,6 +25,7 @@
 })();
 
 function reloadTwitch(utcHours, utcDayOfMonth) {
+    console.log('testing webhook from github to greasyfork');
     //If for some reason the player itself hasn't loaded, refresh the page
     if (!document.getElementsByClassName('video-player__container')[0]) {
         window.location.reload(true);
