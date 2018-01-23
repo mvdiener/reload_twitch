@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Reload Twitch
-// @version      0.41
+// @version      0.42
 // @description  Reloads a Twitch page to check if stream is live, time settings are UTC and set for the Boston 2018 CS:GO Major start times.
 // @author       LaminatedSteel
 // @include      https://www.twitch.tv/*
@@ -25,7 +25,6 @@
 })();
 
 function reloadTwitch(utcHours, utcDayOfMonth) {
-    console.log('testing webhook from github to greasyfork');
     //If for some reason the player itself hasn't loaded, refresh the page
     if (!document.getElementsByClassName('video-player__container')[0]) {
         window.location.reload(true);
