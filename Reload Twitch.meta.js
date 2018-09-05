@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Reload Twitch
-// @version      0.45
+// @version      0.46
 // @description  Reloads a Twitch page to check if stream is live, time settings are UTC and set for the FACEIT London 2018 CS:GO Major start times.
 // @author       LaminatedSteel
 // @include      https://www.twitch.tv/*
@@ -45,7 +45,7 @@ function reloadTwitch(utcHours, utcDayOfMonth) {
     var now = new Date();
     var isAfterStartTimeOnCorrectDay = (now.getUTCDate() == utcDayOfMonth && now.getUTCHours() >= utcHours);
     
-    if (isAfterStartTimeOnCorrectDay && (document.getElementsByClassName('player-streamstatus__label').length == 0 || document.getElementsByClassName('player-streamstatus__label')[0].innerHTML != "Live" || document.getElementsByClassName('player-tip--aleft')[0].attributes[1].value == "Play") {
+    if (isAfterStartTimeOnCorrectDay && (document.getElementsByClassName('player-streamstatus__label').length == 0 || document.getElementsByClassName('player-streamstatus__label')[0].innerHTML != "Live" || document.getElementsByClassName('player-tip--aleft')[0].attributes[1].value == "Play")) {
         window.location.reload(true);
     }
 }
